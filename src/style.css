@@ -5,6 +5,8 @@ body {
   padding-top: 50px;
   background-color: #f4f4f4; /* Light grey background for the page */
   line-height: 1.5;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 h1 {

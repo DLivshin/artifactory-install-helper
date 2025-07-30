@@ -721,7 +721,7 @@ function generateInstallationSteps(selections) {
                             <p>Navigate into the extracted directory (your <code>$JFROG_HOME</code>).</p>
                             <pre><button class="copy-button" title="Copy command">Copy</button><code>cd $JFROG_HOME</code></pre>
                             <p>Rename the extracted folder from artifactory-pro-<version> to artifactory, For example:</p>
-                            <pre><button class="copy-button" title="Copy command">Copy</button><code>mv artifactory-pro-7.104.10 artifactory</code></pre>`;
+                            <pre><button class="copy-button" title="Copy command">Copy</button><code>mv artifactory-pro-${artifactoryVersion} artifactory</code></pre>`;
                 startCommand = `$JFROG_HOME/artifactory/app/bin/artifactoryctl start`; 
                 statusCommand = `$JFROG_HOME/artifactory/app/bin/artifactoryctl check`;
                 stopCommand = `$JFROG_HOME/artifactory/app/bin/artifactoryctl stop`;
