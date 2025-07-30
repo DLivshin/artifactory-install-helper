@@ -1,7 +1,7 @@
 {
   "name": "artifactory-install-helper",
   "private": true,
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A tool to generate personalized guidance for self-hosted Artifactory installations.",
   "author": "David Livshin",
   "type": "module",
