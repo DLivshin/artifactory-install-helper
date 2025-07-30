@@ -1,6 +1,6 @@
 // src/ui.js
 
-import { cssTemplate, htmlTemplate } from './templates.js';
+import componentStyles from './style.css?raw';
 import * as config from './config.js'; 
 import { selections } from './state.js';
 import { debugLog } from './utils.js';
@@ -1144,10 +1144,15 @@ function addEventListeners() {
 export function initializeApp(appElement, version) {
     artifactoryVersion = version;
     shadowRoot = appElement.attachShadow({ mode: 'open' });
-    
-    // Inject CSS and HTML
-    shadowRoot.innerHTML = `<style>${cssTemplate}</style>${htmlTemplate}`;
 
+    const styleEl = document.createElement('style');
+    styleEl.textContent = componentStyles;
+    shadowRoot.appendChild(styleEl);
+    
+    const template = document.getElementById('app-template');
+
+    const templateContent = template.content.cloneNode(true);
+    shadowRoot.appendChild(templateContent);
     queryElements(shadowRoot);
 
     // --- Initial State Setup ---
