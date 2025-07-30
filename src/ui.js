@@ -1,6 +1,7 @@
 // src/ui.js
 
 import componentStyles from './style.css?raw';
+import componentHtml from './template.html?raw';
 import * as config from './config.js'; 
 import { selections } from './state.js';
 import { debugLog } from './utils.js';
@@ -1145,14 +1146,8 @@ export function initializeApp(appElement, version) {
     artifactoryVersion = version;
     shadowRoot = appElement.attachShadow({ mode: 'open' });
 
-    const styleEl = document.createElement('style');
-    styleEl.textContent = componentStyles;
-    shadowRoot.appendChild(styleEl);
-    
-    const template = document.getElementById('app-template');
+    shadowRoot.innerHTML = `<style>${componentStyles}</style>${componentHtml}`;
 
-    const templateContent = template.content.cloneNode(true);
-    shadowRoot.appendChild(templateContent);
     queryElements(shadowRoot);
 
     // --- Initial State Setup ---
